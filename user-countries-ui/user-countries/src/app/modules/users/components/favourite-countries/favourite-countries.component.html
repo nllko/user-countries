@@ -1,0 +1,21 @@
+<div *ngIf="loading; else content">Loading favourite countries...</div>
+
+<ng-template #content>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Capitals</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let country of countries">
+      <td>{{ country.name }}</td>
+      <td>{{ country.code }}</td>
+      <td>{{ country.capitals }}</td>
+    </tr>
+    </tbody>
+  </table>
+  <button routerLink="">Go back</button>
+</ng-template>

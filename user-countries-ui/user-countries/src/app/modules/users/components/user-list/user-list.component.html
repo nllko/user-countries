@@ -1,0 +1,22 @@
+<div *ngIf="loading; else content">Loading users...</div>
+
+<ng-template #content>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>username</th>
+      <th> </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>
+        <button routerLink="/{{user.id}}/favourite-countries">Show favourite countries</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</ng-template>

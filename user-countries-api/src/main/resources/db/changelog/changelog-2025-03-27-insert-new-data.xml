@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="nikolajs.aleksejenkovs" id="5">
+        <!-- Insert users -->
+        <insert tableName="users">
+            <column name="id" value="4"/>
+            <column name="username" value="alice_smith"/>
+        </insert>
+
+        <!-- Insert countries with code -->
+        <insert tableName="countries">
+            <column name="id" value="4"/>
+            <column name="name" value="Germany"/>
+            <column name="code" value="DE"/> <!-- Country code for Germany -->
+        </insert>
+        <insert tableName="countries">
+            <column name="id" value="5"/>
+            <column name="name" value="France"/>
+            <column name="code" value="FR"/> <!-- Country code for France -->
+        </insert>
+
+        <!-- Insert favorite_country relationships -->
+        <insert tableName="favorite_country">
+            <column name="user_id" value="4"/>
+            <column name="country_id" value="4"/>
+        </insert>
+        <insert tableName="favorite_country">
+            <column name="user_id" value="4"/>
+            <column name="country_id" value="5"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
